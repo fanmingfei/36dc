@@ -104,6 +104,10 @@ namespace Lover
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (File.Exists("save.dc") == false)
+            {
+                return;
+            }
             StreamReader sr = new StreamReader("save.dc", Encoding.UTF8);
             String line;
             line = sr.ReadLine();
