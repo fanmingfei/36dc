@@ -83,10 +83,6 @@ namespace Lover
                         Directory.CreateDirectory(desfolderdir);
                     }
 
-                    if(File.Exists(srcfileName))
-                    {
-                        File.Delete(srcfileName);
-                    }
                     File.Copy(file, srcfileName);
                 }
             }//foreach 
@@ -108,7 +104,25 @@ namespace Lover
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            StreamReader sr = new StreamReader("save.dc", Encoding.UTF8);
+            String line;
+            line = sr.ReadLine();
+            sr.Close();
+            if (line == null) return;
+            char[] chr = new char[] { '|' };
+            string[] Paths = line.Split(chr);
+            if (Paths[0] != null)
+            {
+                fromInput.Text = Paths[0];
+            }
+            if (Paths[1] != null)
+            {
+                toInput.Text = Paths[1];
+            }
+
+
         }
+
 
         private void startSleep()
         {
@@ -131,11 +145,24 @@ namespace Lover
             sleep = Convert.ToInt32(sleepTime.Text);
             fromPath = fromInput.Text;
             toPath = toInput.Text + "\\" + DateTime.Now.ToString("yyyyMMddhhmmss");
+
+            if (toInput.Text == fromInput.Text)
+            {
+                MessageBox.Show("两个文件夹不能选取同一个");
+                return;
+            }
             if (sleep == 0 || fromPath == "" || toInput.Text == "")
             {
                 MessageBox.Show("请完善信息哦~");
                 return;
             }
+
+            FileStream fs = new FileStream("save.dc", FileMode.OpenOrCreate);
+            StreamWriter sw = new StreamWriter(fs);
+            sw.Write(fromInput.Text + "|" + toInput.Text);
+            sw.Flush();
+            sw.Close();
+            fs.Close();
 
             startSleepThread = new Thread(startSleep);
             startSleepThread.Start();
@@ -143,15 +170,13 @@ namespace Lover
             customTabControl1.SelectedTab = tabPage2;
         }
 
-        private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void notifyIcon_MouseDoubleClick(object sender, EventArgs e)
         {
-            if (this.Visible)
+            if (WindowState == FormWindowState.Minimized)
             {
-                this.Hide();
-            }
-            else
-            {
-                this.Show();
+                WindowState = FormWindowState.Normal;
+                this.Activate();
+                this.ShowInTaskbar = true;
             }
         }
 
@@ -160,17 +185,6 @@ namespace Lover
 
         }
 
-        private void 打开ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (this.Visible)
-            {
-                this.Hide();
-            }
-            else
-            {
-                this.Show();
-            }
-        }
 
         private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -179,7 +193,8 @@ namespace Lover
 
         private void label7_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            WindowState = FormWindowState.Minimized;
+            this.ShowInTaskbar = false;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -187,5 +202,6 @@ namespace Lover
             startSleepThread.Abort();
             customTabControl1.SelectedTab = tabPage1;
         }
+
     }
 }

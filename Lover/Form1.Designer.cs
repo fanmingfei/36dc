@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.打开ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -72,23 +71,15 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.打开ToolStripMenuItem,
             this.退出ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(161, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(101, 26);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
-            // 
-            // 打开ToolStripMenuItem
-            // 
-            this.打开ToolStripMenuItem.Name = "打开ToolStripMenuItem";
-            this.打开ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.打开ToolStripMenuItem.Text = "显示隐藏主界面";
-            this.打开ToolStripMenuItem.Click += new System.EventHandler(this.打开ToolStripMenuItem_Click);
             // 
             // 退出ToolStripMenuItem
             // 
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
             // 
@@ -126,7 +117,7 @@
             // 
             this.customTabControl1.Controls.Add(this.tabPage1);
             this.customTabControl1.Controls.Add(this.tabPage2);
-            this.customTabControl1.Location = new System.Drawing.Point(2, 29);
+            this.customTabControl1.Location = new System.Drawing.Point(0, 29);
             this.customTabControl1.Name = "customTabControl1";
             this.customTabControl1.SelectedIndex = 0;
             this.customTabControl1.Size = new System.Drawing.Size(580, 213);
@@ -156,7 +147,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(440, 81);
+            this.button2.Location = new System.Drawing.Point(430, 81);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 6;
@@ -166,7 +157,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(390, 124);
+            this.button3.Location = new System.Drawing.Point(380, 124);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 11;
@@ -177,7 +168,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(224, 129);
+            this.label4.Location = new System.Drawing.Point(214, 129);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 9;
@@ -185,7 +176,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(440, 33);
+            this.button1.Location = new System.Drawing.Point(430, 33);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -195,7 +186,7 @@
             // 
             // toInput
             // 
-            this.toInput.Location = new System.Drawing.Point(177, 83);
+            this.toInput.Location = new System.Drawing.Point(167, 83);
             this.toInput.Name = "toInput";
             this.toInput.Size = new System.Drawing.Size(257, 21);
             this.toInput.TabIndex = 5;
@@ -203,7 +194,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(471, 129);
+            this.label6.Location = new System.Drawing.Point(461, 129);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 12);
             this.label6.TabIndex = 12;
@@ -212,7 +203,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(85, 86);
+            this.label2.Location = new System.Drawing.Point(75, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 4;
@@ -220,7 +211,7 @@
             // 
             // sleepTime
             // 
-            this.sleepTime.Location = new System.Drawing.Point(177, 126);
+            this.sleepTime.Location = new System.Drawing.Point(167, 126);
             this.sleepTime.Name = "sleepTime";
             this.sleepTime.Size = new System.Drawing.Size(41, 21);
             this.sleepTime.TabIndex = 8;
@@ -228,7 +219,7 @@
             // 
             // fromInput
             // 
-            this.fromInput.Location = new System.Drawing.Point(177, 35);
+            this.fromInput.Location = new System.Drawing.Point(167, 35);
             this.fromInput.Name = "fromInput";
             this.fromInput.Size = new System.Drawing.Size(257, 21);
             this.fromInput.TabIndex = 2;
@@ -236,7 +227,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(312, 129);
+            this.label5.Location = new System.Drawing.Point(302, 129);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 12);
             this.label5.TabIndex = 10;
@@ -245,7 +236,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(85, 129);
+            this.label3.Location = new System.Drawing.Point(75, 129);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 7;
@@ -254,7 +245,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(97, 38);
+            this.label1.Location = new System.Drawing.Point(87, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 12);
             this.label1.TabIndex = 3;
@@ -278,7 +269,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 1;
-            this.button4.Text = "重设";
+            this.button4.Text = "结束";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -335,7 +326,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NotifyIcon notifyIcon;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem 打开ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem;
         private mfClient.CustomTabControl customTabControl1;
         private System.Windows.Forms.TabPage tabPage1;
