@@ -177,6 +177,7 @@ namespace Lover
                 WindowState = FormWindowState.Normal;
                 this.Activate();
                 this.ShowInTaskbar = true;
+                this.Show();
             }
         }
 
@@ -195,6 +196,7 @@ namespace Lover
         {
             WindowState = FormWindowState.Minimized;
             this.ShowInTaskbar = false;
+            this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)
